@@ -1,0 +1,4 @@
+#!/bin/bash
+git add .
+git commit -m "cr7"
+git push
