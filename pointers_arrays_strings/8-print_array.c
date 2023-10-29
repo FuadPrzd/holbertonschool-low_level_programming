@@ -1,20 +1,24 @@
-#include "main.h"
-/**
-*print_array - print n element of array
-*@a: array
-*@n: number of elements
-*Return: nothing
-*/
-void print_array(int *a, int n)
-{
-int inc;
-for (inc = 0; inc < n ; inc++)
-{
-if (inc != n - 1)
-printf("%d, ", a[inc]);
-else
-printf("%d", a[inc]);
+#include "holberton.h"
 
-}
-printf("\n");
+/**
+ * rot13 - rotate characters 13 places in the alphabet
+ * @s: string
+ * Return: string `s` rotated
+ */
+
+char *rot13(char *s)
+{
+	int i;
+	char storeh[] = "NOPQRSTUVWXYZABCDEFGHIJKLM";
+	char storel[] = "nopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if ((s[i] > 64 && s[i] < 91) || (s[i] > 96 && s[i] < 123))
+		{
+			s[i] = (s[i] - 65 > 25) ?
+				storel[s[i] - 97] : storeh[s[i] - 65];
+		}
+	}
+	return (s);
 }
