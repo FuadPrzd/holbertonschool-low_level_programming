@@ -1,6 +1,18 @@
-#ifndef PI_H
-#define PI_H
+#include <stdio.h>
+#include "1-pi.h"
 
-#define PI 3.14159265359
-
-#endif1
+/**
+ * main - Entry point
+ *
+ * Return: 1 for error, 0 therwise
+ */
+int main(void)
+{
+#ifndef PI
+	printf("Macro 'PI' is not defined\n");
+	return (1);
+#else
+	printf("%.12f\n", PI);
+	return (0);
+#endif
+}
